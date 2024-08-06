@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Min operations """
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """ Min operations """
     if n <= 1:
         return 0
