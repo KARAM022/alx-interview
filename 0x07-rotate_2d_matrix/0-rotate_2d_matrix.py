@@ -1,17 +1,20 @@
 #!/usr/bin/python3
-''' Rotate 2D Matrix '''
+"""_summary_
+"""
 
 
 def rotate_2d_matrix(matrix):
-    ''' Rotate 2D Matrix '''
-    len_matrix = len(matrix)
-    new_matrix = [[0] * len_matrix for i in range(len_matrix)]
-    print(new_matrix)
+    """_summary_
 
-    matrix.reverse()
-    for x in range(len_matrix):
-        for y in range(len_matrix):
-            new_matrix[x][y] = matrix[y][x]
+    Args:
+                    matrix (_type_): _description_
+    """
+    n = len(matrix)
+    for i in range(n):
+        for j in range(i, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
-    for i in range(len_matrix):
-        matrix[i] = new_matrix[i]
+    for row in matrix:
+        row.reverse()
+
+    return matrix
